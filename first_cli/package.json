@@ -10,8 +10,8 @@
     "access": "public"
   },
   "bin": {
-    "@tomoyd/first_cli": "bin/index",
-    "first_cli": "bin/index"
+    "@tomoyd/first_cli": "bin/index.js",
+    "first_cli": "bin/index.js"
   },
   "keywords": [
     "cli",

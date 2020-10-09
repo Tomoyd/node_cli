@@ -1,4 +1,4 @@
-/**/node_modules
+first_cli/node_modules
 dist
 /**/.DS_Store
 /**/.vscode
