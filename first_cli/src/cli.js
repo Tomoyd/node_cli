@@ -23,7 +23,6 @@ function parseArgumentsIntoOptions(rawArgs) {
     runInstall: args['--install'] || false,
   };
 }
-
 async function promptForMissingOptions(options) {
   const defaultTemplate = 'JavaScript';
   if (options.skipPrompts) {
