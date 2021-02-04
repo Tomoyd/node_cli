@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.0.0"
+  },
+  "bin": {
+    "test-cli": "./bin/startup.js"
+  },
+  "scripts": {
+    "start": "node ./bin/startup.js"
+  },
+  "name": "node_cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Tomoyd/node_cli.git",
+  "author": "Tomoyd <ydh9419@163.com>",
+  "license": "MIT"
+}
