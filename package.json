@@ -14,5 +14,8 @@
   "main": "index.js",
   "repository": "https://github.com/Tomoyd/node_cli.git",
   "author": "Tomoyd <ydh9419@163.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.20.2"
+  }
 }
