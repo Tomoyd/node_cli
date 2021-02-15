@@ -8,12 +8,12 @@
     "ora": "^5.3.0"
   },
   "bin": {
-    "test-cli": "./bin/startup.js"
+    "huy-cli": "./bin/startup.js"
   },
   "scripts": {
     "start": "node ./bin/startup.js"
   },
-  "name": "node_cli",
+  "name": "huy-cli",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Tomoyd/node_cli.git",
