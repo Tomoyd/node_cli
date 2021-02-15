@@ -10,6 +10,11 @@ const commands = [
   {
     key: "-l,--list",
     desc: "查看可用模板列表"
+  },
+  {
+    key: "-t,  --template <type>",
+    desc: "创建模板类型",
+    default: "ts-vue"
   }
 ];
 

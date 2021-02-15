@@ -5,23 +5,27 @@ const program = require("commander");
 const inquirer = require("inquirer");
 const commands = require("../config/commands");
 const questions = require("../config/questions");
+// @ts-ignore
 const packageData = require("../package.json");
 const templates = require("../template");
 const initTemplateDefault = require("../utils/initTemplateDefault");
 const parseParams = require("../utils/parseParam");
-initOptions();
+const successTip = require("../utils/tip");
 
+initOptions();
 const params = parseParams(process.argv);
+console.log("params :>> ", params);
 handleCommand(params);
 
-function handleCommand(inputs) {
+async function handleCommand(inputs) {
   if (!inputs) {
     return;
   }
+
   if (inputs.init) {
-    inquirer.prompt(questions).then((answers) => {
+    return inquirer.prompt(questions).then(async (answers) => {
       let url = templates[answers.template.split("(")[0]].downloadUrl;
-      initTemplateDefault(answers, url);
+      await initTemplateDefault(answers, url);
       successTip(answers.projectName);
     });
   }
@@ -30,11 +34,20 @@ function handleCommand(inputs) {
     for (let key in templates) {
       console.log(chalk.cyanBright(`${key}:${templates[key].description}`));
     }
+
+    return;
+  }
+  if (inputs.projectName) {
+    let url = templates[inputs.template].downloadUrl;
+    await initTemplateDefault({ projectName: inputs.projectName }, url);
+    successTip(inputs.projectName);
+    return;
   }
 }
+
 function initOptions() {
   program.version(packageData.version);
   commands.forEach((command) => {
-    program.option(command.key, command.desc);
+    program.option(command.key, command.desc, command.default);
   });
 }
